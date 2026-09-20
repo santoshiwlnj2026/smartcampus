@@ -3,7 +3,7 @@ import sqlite3, os
 from werkzeug.utils import secure_filename
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.', static_folder='.')
 app.secret_key = "smartcampus123"
 app.config['UPLOAD_FOLDER'] = "static/uploads"
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
